@@ -19,5 +19,6 @@ public class Classwork {
   public static void main(String[] args) {
     System.out.println(makeAllWords(2, 3));
     System.out.println(makeAllWords(2, 20));
+    System.out.println(makeAllWords(5, 7));
   }
 }
