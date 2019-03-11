@@ -21,7 +21,7 @@ public class Classwork {
     end = data.length;
     int rando = (int) Math.random() * data.length;
     int pivot = data[rando];
-    int temp = data[start];
+    int temp = data[0];
     data[0] = pivot;
     data[rando] = temp;
     while (start < end) {
