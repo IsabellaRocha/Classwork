@@ -18,26 +18,19 @@ public class Classwork {
   }
   public static int partition (int[] data, int start, int end) {
     start = 1;
-    end = data.length;
+    end = data.length - 1;
     int rando = (int) Math.random() * data.length;
     int pivot = data[rando];
-    int temp = data[0];
+    data[rando] = data[0];
     data[0] = pivot;
-    data[rando] = temp;
     while (start < end) {
-      if (data[start] > pivot) {
-        int cur = data[start];
-        int swap = data[end];
-        data[start] = swap;
-        data[end] = cur;
+      int s = data[start];
+      int e = data[end];
+      if (s > pivot || e < pivot) {
+        data[start] = e;
+        data[end] = s;
         start++;
-      }
-      if (data[end] < pivot) {
-        int cur = data[end];
-        int swap = data[start];
-        data[start] = cur;
-        data[end] = swap;
-        end++;
+        end--;
       }
     }
     if (data[start] < pivot) {
